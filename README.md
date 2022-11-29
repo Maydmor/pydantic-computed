@@ -55,9 +55,6 @@ Since all properties are passed as **kwargs to calculate_c, we can use the prope
 from pydantic import BaseModel
 from pydantic_computed import Computed, computed
 
-from pydantic import BaseModel
-from pydantic_computed import Computed, computed
-
 class ExampleModel(BaseModel):
     a: int
     b: int
