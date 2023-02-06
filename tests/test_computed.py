@@ -22,10 +22,12 @@ class ComputedModelStr(BaseModel):
 class ComputedModelKwargs(BaseModel):
     a: int
     b: int 
+
     c: Computed[str]
     @computed('c')
     def calculate_c(a:int, **kwargs):
         return kwargs.get('b') * a
+    
 
 class ComputedModelNoArgs(BaseModel):
     a: int
@@ -34,6 +36,22 @@ class ComputedModelNoArgs(BaseModel):
     @computed('c')
     def calculate_c():
         return 5
+
+
+class MultipleComputed(BaseModel):
+    a: int
+    b: int
+    c: Computed[int]
+    d: Computed[int]
+    e: Computed[int]
+    @computed('c')
+    def calc_c(a: int, b: int):
+        print(a)
+        return a + b
+
+    @computed('d', pre=False)
+    def calc_d(c: int):
+        return c * 2
 
 def test_simple():
     model = ComputedModelInt(a=1, b=2)
@@ -69,3 +87,7 @@ def test_use_kwargs():
 def test_no_parameters():
     model = ComputedModelNoArgs(a = 1, b = 2)
     assert model.c == 5
+
+def test_multiple_computed():
+    model = MultipleComputed(a=1, b=2)
+    assert model.d == 6
