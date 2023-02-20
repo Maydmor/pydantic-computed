@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydantic-computed"
-version = "0.1.2"
+version = "0.2.0"
 description = "A new decorator for pydantic allowing you to define dynamic fields that are computed from other properties"
 authors = ["Jakob Leibetseder <leibetsederjakob@gmail.com>"]
 license = "MIT"
