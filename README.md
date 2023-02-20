@@ -123,7 +123,7 @@ order.json()
 ``` 
 
 
-### Triangle example:
+### Vector example:
 
 ```python
 from pydantic import BaseModel
