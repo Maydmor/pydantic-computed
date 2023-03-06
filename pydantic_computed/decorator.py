@@ -1,6 +1,6 @@
 from pydantic import validator, root_validator, create_model
 from typing import Callable, Dict
-from inspect import getargspec, signature
+from inspect import signature
 
 COMPUTED_FIELDS = {}
 
