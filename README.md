@@ -1,4 +1,7 @@
+# This project is deprecated since pydantic v2 now supports computed fields and will no longer be maintained.
+
 # pydantic-computed
+
 A new decorator for pydantic allowing you to define dynamic fields that are computed from other properties.
 
 ## Installation
